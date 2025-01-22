@@ -20,7 +20,7 @@ const server = http
           res.write('<!DOCTYPE html><html lang="ja"><body>' +
             '<h1>アンケート一覧</h1><ul>' +
             '<li><a href="/enquetes/yaki-tofu">焼き肉・湯豆腐</a></li>' +
-            '<li><a href="/enquetes/rice-bread>ごはん・ピザ</a></li>' +
+            '<li><a href="/enquetes/rice-bread">ごはん・ピザ</a></li>' +
             '<li><a href="/enquetes/sushi-pizza">寿司・ピザ</a></li>' +
             '</ul></body></html>');
         } else if (req.url === '/enquetes/yaki-tofu') {
@@ -76,7 +76,7 @@ const server = http
   .on('clientError', e => {
     console.error(`[${new Date()}] Client Error`, e);
   });
-const port = 8000;
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.info(`[${new Date()}] Listening on ${port}`);
 });
